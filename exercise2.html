@@ -6,9 +6,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-	$("p:first").hide();
-	$("#p2").hide();
-	$(".p3").hide();
+	$("input:first").click(function(){
+		if($("input:first").val()==="隱藏1"){
+			$("p:first").hide();
+			$("input:first").val("顯示1");
+		}
+       	 	else{
+			$("p:first").show();
+			$("input:first").val("隱藏1");
+		}
+    	});
+	$("input").eq(1).click(function(){
+		if($("input").eq(1).val()==="隱藏2"){
+			$("#p2").hide();
+			$("input").eq(1).val("顯示2");
+		}
+       	 	else{
+			$("#p2").show();
+			$("input").eq(1).val("隱藏2");
+		}
+    	});
+	$("input").last().click(function(){
+		if($("input").last().val()==="隱藏3"){
+			$(".p3").hide();
+			$("input").last().val("顯示3");
+		}
+       	 	else{
+			$(".p3").show();
+			$("input").last().val("隱藏3");
+		}
+       	 	
+    	});
 });
 </script>
 </head>
@@ -17,5 +45,8 @@ $(document).ready(function(){
 <p id="p1">Hide Paragraph1</p>
 <p id="p2">Hide Paragraph2</p>
 <p class="p3">Hide Paragraph3</p>
+<input type="button" value="隱藏1">
+<input type="button" value="隱藏2">
+<input type="button" value="隱藏3">
 </body>
 </html>
